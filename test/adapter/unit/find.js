@@ -1,5 +1,5 @@
 var assert = require('assert');
-var _ = require('@sailshq/lodash');
+var _ = require('lodash');
 var Adapter = require('../../../lib/adapter');
 var Support = require('../../support/bootstrap');
 
@@ -39,8 +39,8 @@ describe('Unit Tests ::', function() {
 
         assert(_.isArray(results));
         assert.equal(results.length, 1);
-        assert.equal(_.first(results).fieldA, 'foo');
-        assert.equal(_.first(results).fieldB, 'bar');
+        assert.equal(_.head(results).fieldA, 'foo');
+        assert.equal(_.head(results).fieldB, 'bar');
 
         return done();
       });
@@ -81,8 +81,8 @@ describe('Unit Tests ::', function() {
 
         assert(_.isArray(results));
         assert.equal(results.length, 1);
-        assert.equal(_.first(results).fieldA, 'foo_2');
-        assert.equal(_.first(results).fieldB, 'bAr_2');
+        assert.equal(_.head(results).fieldA, 'foo_2');
+        assert.equal(_.head(results).fieldB, 'bAr_2');
 
         return done();
       });
